@@ -1,0 +1,9 @@
+#app {
+  background-color: gray;
+  min-height: 100vh;
+}
+
+#header-logo {
+  width: 300px;
+  margin: 0 auto;
+}

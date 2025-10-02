@@ -1,14 +1,20 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const MasterLayout = () => {
     return (
         <div id='app'>
-            <header>header</header>
+            <header>
+                <Header />
+            </header>
             <main>
                 <Outlet />
             </main>
-            <footer>footer</footer>
+            <footer>
+                <Footer />
+            </footer>
         </div>
     )
 }
