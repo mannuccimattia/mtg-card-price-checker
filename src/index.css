@@ -32,11 +32,45 @@ main>.container {
 
 .home-content {
   position: absolute;
-  top: 10vh;
+  top: 20vh;
   left: 50%;
   translate: -50% 0;
 }
 
+.card.card-body {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  border: none !important;
+}
+
+.form-floating {
+  width: 100%;
+}
+
+.svg-logo {
+  translate: 0 -7%;
+}
+
+.svg-logo path {
+  fill: #0d6efd;
+}
+
+button:hover path {
+  fill: #fff;
+  transition: 0.15s ease-in-out;
+}
+
 footer .nav-link:hover {
   color: aqua;
+}
+
+@media (max-width: 575.98px) {
+  .card {
+    width: 90vw;
+  }
+}
+
+@media (max-height: 575.98px) {
+  .home-content {
+    top: 1vh;
+  }
 }

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Footer = () => {
     return (
         <footer className='text-secondary d-flex align-items-center justify-content-center'>
