@@ -2,8 +2,12 @@ import React from 'react'
 
 const Homepage = () => {
     return (
-        <div>
-            <h2>Homepage</h2>
+        <div className="container">
+            <div className="position-relative">
+                <div className="home-content">
+
+                </div>
+            </div>
         </div>
     )
 }

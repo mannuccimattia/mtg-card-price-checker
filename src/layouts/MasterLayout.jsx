@@ -6,15 +6,11 @@ import Footer from './components/Footer'
 const MasterLayout = () => {
     return (
         <div id='app'>
-            <header>
-                <Header />
-            </header>
-            <main>
+            <Header />
+            <main className='text-light'>
                 <Outlet />
             </main>
-            <footer>
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     )
 }

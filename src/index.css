@@ -1,9 +1,42 @@
 #app {
-  background-color: gray;
+  background-image: url("../public/imgs/bg-goblin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
+}
+
+nav {
+  height: 70px;
+  background: #000000;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+footer {
+  height: 40px;
+  font-size: 0.88rem;
+  letter-spacing: 0.02rem;
+  background: #000000;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+main>.container {
+  min-height: calc(100vh - 110px);
 }
 
 #header-logo {
   width: 300px;
   margin: 0 auto;
+}
+
+.home-content {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  translate: -50% 0;
+}
+
+footer .nav-link:hover {
+  color: aqua;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <nav className="navbar bg-black" data-bs-theme="dark">
+        <nav className="navbar" data-bs-theme="dark">
             <div className="container">
                 <figure id="header-logo">
                     <a href="/">
