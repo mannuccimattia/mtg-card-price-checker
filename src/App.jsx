@@ -1,16 +1,36 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Homepage from "./pages/Homepage"
+import { useState } from "react"
+import GlobalContext from "./contexts/globalContext"
 import MasterLayout from "./layouts/MasterLayout"
+import Homepage from "./pages/Homepage"
 
 const App = () => {
+  const [searchMode, setSearchMode] = useState("name");
+  const [cardName, setCardName] = useState("");
+  const [collectorNumber, setCollectorNumber] = useState("");
+  const [setCode, setSetCode] = useState("");
+
+  const values = {
+    searchMode,
+    setSearchMode,
+    cardName,
+    setCardName,
+    collectorNumber,
+    setCollectorNumber,
+    setCode,
+    setSetCode
+  }
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MasterLayout />}>
-          <Route index element={<Homepage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <GlobalContext.Provider value={values}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MasterLayout />}>
+            <Route index element={<Homepage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </GlobalContext.Provider>
   )
 }
 

@@ -1,12 +1,17 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import GlobalContext from "../contexts/globalContext";
 import SearchModeSwitch from "../components/SearchModeSwitch";
 
 const Homepage = () => {
-
-    const [searchMode, setSearchMode] = useState("name");
-    const [cardName, setCardName] = useState("");
-    const [collectorNumber, setCollectorNumber] = useState("");
-    const [setCode, setSetCode] = useState("");
+    const {
+        searchMode,
+        cardName,
+        setCardName,
+        collectorNumber,
+        setCollectorNumber,
+        setCode,
+        setSetCode
+    } = useContext(GlobalContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,10 +31,7 @@ const Homepage = () => {
                 <div className="home-content">
                     <h1 className='text-center mb-5'>FIND YOUR CARD</h1>
 
-                    <SearchModeSwitch
-                        searchMode={searchMode}
-                        setSearchMode={setSearchMode}
-                    />
+                    <SearchModeSwitch />
 
                     <div className="card card-body" data-bs-theme="dark">
                         <form onSubmit={handleSubmit}>

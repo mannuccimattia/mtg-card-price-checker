@@ -1,4 +1,10 @@
-const SearchModeSwitch = ({ searchMode, setSearchMode }) => {
+import { useContext } from "react"
+import GlobalContext from "../contexts/globalContext"
+
+const SearchModeSwitch = () => {
+
+    const { searchMode, setSearchMode } = useContext(GlobalContext)
+
     return (
         <div className="btn-group rounded-pill mb-5 w-100" role="group" aria-label="Search mode">
             <input
