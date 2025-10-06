@@ -1,26 +1,91 @@
+import { useState } from "react"
+
 const Homepage = () => {
+
+    const [searchMode, setSearchMode] = useState("name");
+
     return (
         <div className="container">
             <div className="position-relative">
                 <div className="home-content">
-                    <h1 className='text-center mb-4'>FIND YOUR CARD</h1>
+                    <h1 className='text-center mb-5'>FIND YOUR CARD</h1>
+
+                    <div className="btn-group rounded-pill mb-5 w-100" role="group" aria-label="Search mode">
+                        <input
+                            type="radio"
+                            className="btn-check"
+                            name="searchMode"
+                            id="name"
+                            autoComplete="off"
+                            checked={searchMode === "name"}
+                            onChange={() => setSearchMode("name")}
+                        />
+                        <label className="btn btn-outline-primary rounded-start-pill w-50" htmlFor="name">
+                            <small>Search by name</small>
+                        </label>
+
+                        <input
+                            type="radio"
+                            className="btn-check"
+                            name="searchMode"
+                            id="number"
+                            autoComplete="off"
+                            checked={searchMode === "number"}
+                            onChange={() => setSearchMode("number")}
+                        />
+                        <label className="btn btn-outline-primary rounded-end-pill w-50" htmlFor="number">
+                            <small>Search by collector number</small>
+                        </label>
+                    </div>
+
                     <div className="card card-body" data-bs-theme="dark">
                         <form action="">
+                            {searchMode === "name" && (
+                                <div className="d-flex mb-3 align-items-center">
+                                    <div className="form-floating">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="cardName"
+                                            placeholder=" "
+                                            required
+                                        />
+                                        <label htmlFor="cardName">Full name</label>
+                                    </div>
+                                    <i className="fa-regular fa-circle-question ms-2"></i>
+                                </div>
+                            )}
+
+                            {searchMode === "number" && (
+                                <div className="d-flex mb-4 align-items-center">
+                                    <div className="form-floating">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="collectorNumber"
+                                            placeholder=" "
+                                            required
+                                        />
+                                        <label htmlFor="collectorNumber">Collector number</label>
+                                    </div>
+                                    <i className="fa-regular fa-circle-question ms-2"></i>
+                                </div>
+                            )}
+
                             <div className="d-flex mb-3 align-items-center">
                                 <div className="form-floating">
-                                    <input type="text" className="form-control" id="code" required />
-                                    <label for="code">Set code</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="setCode"
+                                        placeholder=" "
+                                        required
+                                    />
+                                    <label htmlFor="setCode">Set code</label>
                                 </div>
-                                <i class="fa-regular fa-circle-question ms-2"></i>
+                                <i className="fa-regular fa-circle-question ms-2"></i>
                             </div>
 
-                            <div className="d-flex mb-4 align-items-center">
-                                <div className="form-floating">
-                                    <input type="text" className="form-control" id="number" required />
-                                    <label for="number">Collector number</label>
-                                </div>
-                                <i class="fa-regular fa-circle-question ms-2"></i>
-                            </div>
                             <div className="text-center">
                                 <button className='btn btn-outline-primary'>
                                     <svg className='svg-logo me-1' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 349 349" version="1.1">
