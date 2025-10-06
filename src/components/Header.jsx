@@ -4,7 +4,7 @@ const Header = () => {
             <div className="container">
                 <figure id="header-logo">
                     <a href="/">
-                        <img className='img-fluid' src="imgs/header-logo.png" alt="website logo" />
+                        <img className='img-fluid' src="/imgs/header-logo.png" alt="website logo" />
                     </a>
                 </figure>
             </div>

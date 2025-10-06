@@ -1,8 +1,13 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import GlobalContext from "../contexts/globalContext";
 import SearchModeSwitch from "../components/SearchModeSwitch";
 
 const Homepage = () => {
+
+    const navigate = useNavigate();
+
     const {
         searchMode,
         cardName,
@@ -16,12 +21,15 @@ const Homepage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (searchMode === "name") {
-            console.log("----- Name search -----");
-            console.log(cardName, setCode)
+            const url = `https://api.scryfall.com/cards/named?exact=${cardName}&set=${setCode}`;
+            axios.get(url).then(res => {
+                const card = res.data;
+                console.log(card)
+                navigate(`/card/${card.set}/${card.collector_number}`, { state: { card } });
+            });
         }
         if (searchMode === "number") {
-            console.log("----- Collector search -----");
-            console.log(collectorNumber, setCode)
+            navigate(`/card/${setCode}/${collectorNumber}`)
         }
     }
 
