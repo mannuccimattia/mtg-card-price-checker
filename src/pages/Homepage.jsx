@@ -24,7 +24,6 @@ const Homepage = () => {
             const url = `https://api.scryfall.com/cards/named?exact=${cardName}&set=${setCode}`;
             axios.get(url).then(res => {
                 const card = res.data;
-                console.log(card)
                 navigate(`/card/${card.set}/${card.collector_number}`, { state: { card } });
             });
         }

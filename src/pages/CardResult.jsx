@@ -1,13 +1,19 @@
 import { useEffect } from "react"
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import axios from "axios";
 
 const CardResult = () => {
     const { state } = useLocation();
-    const card = state?.card || null;
+    let card = state?.card || null;
+
+    const { code, number } = useParams();
 
     useEffect(() => {
         if (!card) {
-            console.log("no card")
+            const url = `https://api.scryfall.com/cards/${code}/${number}`;
+            axios.get(url).then(res => {
+                console.log(res.data);
+            });
         }
         else {
             console.log(card);
