@@ -7,19 +7,13 @@ import CardResult from "./pages/CardResult"
 
 const App = () => {
   const [searchMode, setSearchMode] = useState("name");
-  const [cardName, setCardName] = useState("");
-  const [collectorNumber, setCollectorNumber] = useState("");
-  const [setCode, setSetCode] = useState("");
+  const [isLoading, setIsLoading] = useState("false");
 
   const values = {
     searchMode,
     setSearchMode,
-    cardName,
-    setCardName,
-    collectorNumber,
-    setCollectorNumber,
-    setCode,
-    setSetCode
+    isLoading,
+    setIsLoading
   }
 
   return (

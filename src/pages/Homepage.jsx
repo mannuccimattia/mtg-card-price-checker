@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import GlobalContext from "../contexts/globalContext";
@@ -6,31 +6,38 @@ import SearchModeSwitch from "../components/SearchModeSwitch";
 
 const Homepage = () => {
 
+    const [cardName, setCardName] = useState("");
+    const [collectorNumber, setCollectorNumber] = useState("");
+    const [setCode, setSetCode] = useState("");
+
     const navigate = useNavigate();
 
     const {
         searchMode,
-        cardName,
-        setCardName,
-        collectorNumber,
-        setCollectorNumber,
-        setCode,
-        setSetCode
     } = useContext(GlobalContext);
+
+    const fetchCollectorNumber = () => {
+        const url = `https://api.scryfall.com/cards/named?exact=${cardName}&set=${setCode}`;
+        axios.get(url).then(res => {
+            setCollectorNumber(res.data.collector_number);
+        })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (searchMode === "name") {
-            const url = `https://api.scryfall.com/cards/named?exact=${cardName}&set=${setCode}`;
-            axios.get(url).then(res => {
-                const card = res.data;
-                navigate(`/card/${card.set}/${card.collector_number}`, { state: { card } });
-            });
+            fetchCollectorNumber();
         }
-        if (searchMode === "number") {
-            navigate(`/card/${setCode}/${collectorNumber}`)
+        else {
+            navigate(`/card/${setCode}/${collectorNumber}`);
         }
     }
+
+    useEffect(() => {
+        if (setCode && collectorNumber) {
+            navigate(`/card/${setCode}/${collectorNumber}`);
+        }
+    }, [collectorNumber]);
 
     return (
         <div className="container">
