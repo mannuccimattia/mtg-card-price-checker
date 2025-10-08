@@ -7,7 +7,7 @@ import CardResult from "./pages/CardResult"
 
 const App = () => {
   const [searchMode, setSearchMode] = useState("name");
-  const [isLoading, setIsLoading] = useState("false");
+  const [isLoading, setIsLoading] = useState(false);
 
   const values = {
     searchMode,

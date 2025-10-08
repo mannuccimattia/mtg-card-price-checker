@@ -1,19 +1,35 @@
-import { useContext, useEffect, useEffectEvent } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import GlobalContext from "../contexts/globalContext";
 
 const CardResult = () => {
 
-    // HOMEPAGE CREA ROTTA CARD/CODE/NUMBER
-    // USE PARAMS PER CODE E NUMBER
-    // AJAX A CARDS/:CODE/:NUMBER API
-    // SALVO CARD IN VARIABILE DI STATO QUI
+    const [card, setCard] = useState([]);
+
+    const { code, number } = useParams();
+
+    const { setIsLoading } = useContext(GlobalContext);
+
+    const fetchCard = () => {
+        setIsLoading(true);
+
+        const url = `https://api.scryfall.com/cards/${code}/${number}`;
+        axios.get(url).then(res => {
+            setCard(res.data);
+            console.log(res.data, url);
+            setIsLoading(false);
+        }).catch(err => console.log(err));
+    };
+
+    useEffect(() => {
+        fetchCard();
+    }, []);
 
     return (
         <div className="container">
             <div className='row pt-5'>
-                {card && <>
+                {card?.object && <>
                     <div className="col-12 col-md-5">
                         <img className="img-fluid rounded-5" src={card.image_uris.normal} alt={card.name + " card image"} />
                     </div>

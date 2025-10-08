@@ -12,9 +12,7 @@ const Homepage = () => {
 
     const navigate = useNavigate();
 
-    const {
-        searchMode,
-    } = useContext(GlobalContext);
+    const { searchMode } = useContext(GlobalContext);
 
     const fetchCollectorNumber = () => {
         const url = `https://api.scryfall.com/cards/named?exact=${cardName}&set=${setCode}`;
