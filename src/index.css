@@ -87,6 +87,42 @@ button:hover path {
   margin-bottom: 0 !important;
 }
 
+.scrollable-container {
+  height: calc(100vh - 110px);
+  position: relative;
+  overflow: hidden;
+}
+
+.sets-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  padding: 2rem 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sets-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.set-icon {
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.set-name {
+  font-size: 0.8rem;
+}
+
+.set-code {
+  text-align: end;
+  padding-right: 1rem;
+}
+
 footer .nav-link:hover {
   color: aqua;
 }

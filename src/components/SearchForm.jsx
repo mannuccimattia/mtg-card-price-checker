@@ -83,7 +83,7 @@ const SearchForm = () => {
 
     // Handler for link in set code modal
     const handleSetCodeLink = () => {
-        navigate('/set-codes');
+        navigate('/sets');
         setModal({ show: false, title: '', content: null });
     };
 
