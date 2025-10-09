@@ -65,6 +65,7 @@ h1 {
 
 .fa-circle-question {
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .svg-logo {
