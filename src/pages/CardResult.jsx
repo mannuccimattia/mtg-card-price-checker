@@ -8,7 +8,6 @@ const CardResult = () => {
     const [card, setCard] = useState([]);
 
     const { code, number } = useParams();
-
     const { setIsLoading } = useContext(GlobalContext);
 
     const fetchCard = () => {
@@ -17,7 +16,6 @@ const CardResult = () => {
         const url = `https://api.scryfall.com/cards/${code}/${number}`;
         axios.get(url).then(res => {
             setCard(res.data);
-            console.log(res.data, url);
             setIsLoading(false);
         }).catch(err => console.log(err));
     };
