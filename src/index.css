@@ -28,6 +28,7 @@ main>.container {
 #header-logo {
   width: 300px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .home-content {
