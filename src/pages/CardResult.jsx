@@ -78,7 +78,7 @@ const CardResult = () => {
                         </div>
                         <div className="row mt-4">
                             <div className="col-12 text-center mb-3">
-                                <small className="ps-3 text-secondary">Prices refer to NM copies</small>
+                                <small className="ps-3 text-secondary">Prices refer to Near Mint copies. Check each vendor's guide for grading your card.</small>
                             </div>
                             <div className="col-6">
                                 <a className="text-info-emphasis" href="https://help.cardmarket.com/en/CardCondition" target="_blank">
