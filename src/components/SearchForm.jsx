@@ -74,9 +74,10 @@ const SearchForm = () => {
         }
     }
 
+    // When searching by name
     // Monitor collectorNumber to navigate to result page after it's been fetched
     useEffect(() => {
-        if (setCode && collectorNumber) {
+        if (searchMode === "name" && setCode && collectorNumber) {
             navigate(`/card/${setCode.toLowerCase()}/${collectorNumber.replace(/^0+/, '')}`);
         }
     }, [collectorNumber]);
@@ -113,7 +114,7 @@ const SearchForm = () => {
             title: 'Set Code Help',
             content: (
                 <div>
-                    <p>Enter the 3-5 letter set code.</p>
+                    <p>Enter the 3-5 letter set code in <b>lowercase</b>.</p>
                     <p>For example: <br></br>"lea" for Limited Edition Alpha,<br></br>"m21" for Core Set 2021.</p>
                     <button
                         className="btn btn-link p-0 text-decoration-none"
