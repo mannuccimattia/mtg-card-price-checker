@@ -39,8 +39,33 @@ const CardResult = () => {
                         <h6 className="text-secondary">
                             {card.type_line}
                         </h6>
-                        <h5>{card.oracle_text}</h5>
+                        <h5 className="my-4">{card.oracle_text}</h5>
                         <h6><em className="text-secondary">{card.flavor_text}</em></h6>
+                        <hr className="my-4" />
+                        <div className="row">
+                            <div className="col-6 d-flex">
+                                <div className="fw-semibold pe-1">{card.set_name}</div>
+                                <span className="text-secondary">({card.set.toUpperCase()})</span>
+                            </div>
+                            <div className="col-6 text-end">
+                                <span>€ {card.prices.eur}</span>
+                                <span> / </span>
+                                <span>€ {card.prices.eur_foil}</span>
+                                <span className="foil-icon ms-2"></span>
+                            </div>
+                        </div>
+                        <div className="row mt-4">
+                            <div className="col-6">
+                                <a className="btn btn-outline-primary w-100" href={card.purchase_uris.cardmarket} target="_blank">
+                                    Cardmarket
+                                </a>
+                            </div>
+                            <div className="col-6">
+                                <a className="btn btn-outline-primary w-100" href={card.purchase_uris.tcgplayer} target="_blank">
+                                    TCGplayer
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </>}
             </div>

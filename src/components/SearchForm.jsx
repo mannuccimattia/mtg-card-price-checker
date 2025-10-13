@@ -150,7 +150,7 @@ const SearchForm = () => {
                                     />
                                     <label htmlFor="cardName">Full name</label>
                                 </div>
-                                <i className="fa-regular fa-circle-question ms-2" onClick={() => openModal('cardName')}></i>
+                                <i className="fa-regular fa-circle-question text-secondary ms-2" onClick={() => openModal('cardName')}></i>
                             </div>
                         )}
 
@@ -168,7 +168,7 @@ const SearchForm = () => {
                                     />
                                     <label htmlFor="collectorNumber">Collector number</label>
                                 </div>
-                                <i className="fa-regular fa-circle-question ms-2" onClick={() => openModal('collectorNumber')}></i>
+                                <i className="fa-regular fa-circle-question text-secondary ms-2" onClick={() => openModal('collectorNumber')}></i>
                             </div>
                         )}
 
@@ -185,7 +185,7 @@ const SearchForm = () => {
                                 />
                                 <label htmlFor="setCode">Set code</label>
                             </div>
-                            <i className="fa-regular fa-circle-question ms-2" onClick={() => openModal('setCode')}></i>
+                            <i className="fa-regular fa-circle-question text-secondary ms-2" onClick={() => openModal('setCode')}></i>
                         </div>
 
                         <div className="text-center">
