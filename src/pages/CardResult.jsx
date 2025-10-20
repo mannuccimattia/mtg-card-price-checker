@@ -28,11 +28,11 @@ const CardResult = () => {
         <div className="container">
             <div className='row pt-5'>
                 {card?.object && <>
-                    <div className="col-12 col-md-5">
+                    <div className="col-12 col-md-5 card-image-col">
                         <img className="img-fluid rounded-5" src={card.image_uris.normal} alt={card.name + " card image"} />
                     </div>
-                    <div className="col-12 col-md-7 pe-5">
-                        <div className="d-flex justify-content-between">
+                    <div className="col-12 col-md-7 card-text-col">
+                        <div className="card-title d-flex justify-content-between">
                             <h2 className="mb-0">{card.name}</h2>
                             <h2 className="mb-0">{card.mana_cost}</h2>
                         </div>
@@ -80,12 +80,12 @@ const CardResult = () => {
                             <div className="col-12 text-center mb-3">
                                 <small className="ps-3 text-secondary">Prices refer to Near Mint copies. Check each vendor's guide for grading your card.</small>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 text-center">
                                 <a className="text-info-emphasis" href="https://help.cardmarket.com/en/CardCondition" target="_blank">
                                     Cardmarket condition guide
                                 </a>
                             </div>
-                            <div className="col-6 text-end">
+                            <div className="col-6 text-center">
                                 <a className="text-info-emphasis" href="https://mktg-assets.tcgplayer.com/web/seller/guides/Card-Conditioning-Standards.pdf" target="_blank">
                                     TCGplayer condition guide
                                 </a>

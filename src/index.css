@@ -88,7 +88,7 @@ button:hover path {
 }
 
 .scrollable-container {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 140px);
   position: relative;
   overflow: hidden;
 }
@@ -162,9 +162,42 @@ footer .nav-link:hover {
   color: aqua;
 }
 
+@media (max-width: 767.98px) {}
+
 @media (max-width: 575.98px) {
+  main>.container {
+    min-height: calc(100vh - 190px);
+  }
+
+  .scrollable-container {
+    height: calc(100vh - 190px);
+  }
+
   .card {
     width: 90vw;
+  }
+
+  .home-content .btn-group {
+    width: 100% !important;
+    margin-left: 0;
+  }
+
+  .btn-group .btn {
+    padding-bottom: 0.65rem;
+  }
+
+  .btn-group small {
+    font-size: 0.65rem;
+  }
+
+  .card-title {
+    margin-top: 4rem;
+  }
+
+  footer {
+    height: 120px;
+    font-size: 0.7rem;
+    padding: 0 0.25rem;
   }
 }
 

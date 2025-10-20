@@ -115,9 +115,9 @@ const SearchForm = () => {
             content: (
                 <div>
                     <p>Enter the 3-5 letter set code in <b>lowercase</b>.</p>
-                    <p>For example: <br></br>"lea" for Limited Edition Alpha,<br></br>"m21" for Core Set 2021.</p>
+                    <small>For example: <br></br>"lea" for Limited Edition Alpha<br></br>"m21" for Core Set 2021</small>
                     <button
-                        className="btn btn-link p-0 text-decoration-none"
+                        className="btn btn-link p-0 mt-2 text-decoration-none"
                         onClick={handleSetCodeLink}
                     >
                         View all set codes →
@@ -155,7 +155,7 @@ const SearchForm = () => {
                         )}
 
                         {searchMode === "number" && (
-                            <div className="d-flex mb-4 align-items-center">
+                            <div className="d-flex mb-3 align-items-center">
                                 <div className="form-floating">
                                     <input
                                         type="text"
