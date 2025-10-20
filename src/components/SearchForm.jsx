@@ -115,7 +115,7 @@ const SearchForm = () => {
             content: (
                 <div>
                     <p>Enter the 3-5 letter set code in <b>lowercase</b>.</p>
-                    <small>For example: <br></br>"lea" for Limited Edition Alpha<br></br>"m21" for Core Set 2021</small>
+                    <small className="d-block">For example: <br></br>"lea" for Limited Edition Alpha<br></br>"m21" for Core Set 2021</small>
                     <button
                         className="btn btn-link p-0 mt-2 text-decoration-none"
                         onClick={handleSetCodeLink}

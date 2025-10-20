@@ -1,6 +1,6 @@
 const SetCard = ({ set }) => {
     return (
-        <div className="col-12 col-xl-3 d-flex column-gap-1 align-items-center">
+        <div className="set-card col-12 col-xl-3 d-flex column-gap-1 align-items-center">
             <div className="card flex-row align-items-center justify-content-between sets-card" data-bs-theme="dark">
                 <div
                     className="col-2 set-icon"
