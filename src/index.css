@@ -1,5 +1,5 @@
 #app {
-  background-image: url("../public/imgs/bg-goblin.png");
+  background-image: url("/imgs/bg-goblin.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
