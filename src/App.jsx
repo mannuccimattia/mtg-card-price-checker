@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState } from "react"
+import { SymbologyProvider } from "./contexts/SymbologyProvider"
 import GlobalContext from "./contexts/globalContext"
 import MasterLayout from "./layouts/MasterLayout"
 import Homepage from "./pages/Homepage"
@@ -18,17 +19,19 @@ const App = () => {
   }
 
   return (
-    <GlobalContext.Provider value={values}>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<MasterLayout />}>
-            <Route index element={<Homepage />} />
-            <Route path="/card/:code/:number" element={<CardResult />} />
-            <Route path="/sets" element={<Sets />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </GlobalContext.Provider>
+    <SymbologyProvider>
+      <GlobalContext.Provider value={values}>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<MasterLayout />}>
+              <Route index element={<Homepage />} />
+              <Route path="/card/:code/:number" element={<CardResult />} />
+              <Route path="/sets" element={<Sets />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </GlobalContext.Provider>
+    </SymbologyProvider>
   )
 }
 

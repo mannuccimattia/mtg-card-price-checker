@@ -1,18 +1,17 @@
 import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { useSymbology } from "../contexts/SymbologyProvider";
 import axios from "axios";
 import GlobalContext from "../contexts/globalContext";
 
 const CardResult = () => {
-
     const [card, setCard] = useState([]);
-
     const { code, number } = useParams();
     const { setIsLoading } = useContext(GlobalContext);
+    const { replaceTextWithSymbols } = useSymbology();
 
     const fetchCard = () => {
         setIsLoading(true);
-
         const url = `https://api.scryfall.com/cards/${code}/${number}`;
         axios.get(url).then(res => {
             setCard(res.data);
@@ -34,12 +33,12 @@ const CardResult = () => {
                     <div className="col-12 col-md-7 card-text-col">
                         <div className="card-title d-flex justify-content-between">
                             <h2 className="mb-0">{card.name}</h2>
-                            <h2 className="mb-0">{card.mana_cost}</h2>
+                            <h2 className="mb-0">{replaceTextWithSymbols(card.mana_cost)}</h2>
                         </div>
                         <h6 className="text-secondary">
                             {card.type_line}
                         </h6>
-                        <h5 className="my-4">{card.oracle_text}</h5>
+                        <h5 className="my-4">{replaceTextWithSymbols(card.oracle_text)}</h5>
                         <h6><em className="text-secondary">{card.flavor_text}</em></h6>
                         <hr className="my-4" />
                         <div className="row">

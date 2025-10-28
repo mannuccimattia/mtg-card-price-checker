@@ -158,6 +158,12 @@ button:hover path {
   fill: #fff;
 }
 
+.sym-svg {
+  height: 1em;
+  margin: 0 0.1em;
+  vertical-align: -0.1em;
+}
+
 footer .nav-link:hover {
   color: aqua;
 }
