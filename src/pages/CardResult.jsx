@@ -48,9 +48,11 @@ const CardResult = () => {
                             </div>
                             <div className="col-6 text-end">
                                 <span>€ {card.prices.eur}</span>
-                                <span> / </span>
-                                <span>€ {card.prices.eur_foil}</span>
-                                <span className="foil-icon ms-2"></span>
+                                {card.prices.eur_foil && <>
+                                    <span> / </span>
+                                    <span>€ {card.prices.eur_foil}</span>
+                                    <span className="foil-icon ms-2"></span>
+                                </>}
                             </div>
                         </div>
                         <div className="row mt-4">
