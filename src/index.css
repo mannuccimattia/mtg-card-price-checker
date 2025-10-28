@@ -162,6 +162,47 @@ footer .nav-link:hover {
   color: aqua;
 }
 
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .set-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-height: 991.98px) and (orientation: landscape) {
+  main>.container {
+    min-height: calc(100vh - 160px);
+  }
+
+  footer {
+    height: 90px;
+  }
+
+  .scrollable-container {
+    height: calc(100vh - 160px);
+  }
+
+  .sets-card {
+    width: 95%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  main>.container {
+    min-height: calc(100vh - 190px);
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .card {
+    width: 65vw;
+  }
+
+  footer {
+    height: 120px;
+  }
+}
 
 @media (max-height: 575.98px) and (orientation: landscape) {
   .home-content {
@@ -200,8 +241,12 @@ footer .nav-link:hover {
 }
 
 @media (max-width: 575.98px) {
-  main>.container {
+  /* main>.container {
     min-height: calc(100vh - 190px);
+  } */
+
+  h1 {
+    font-size: 2rem !important;
   }
 
   .scrollable-container {
@@ -230,7 +275,7 @@ footer .nav-link:hover {
   }
 
   footer {
-    height: 120px;
+    /* height: 120px; */
     font-size: 0.7rem;
     padding: 0 0.25rem;
   }
